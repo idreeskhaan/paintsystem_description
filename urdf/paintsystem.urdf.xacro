@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+
+<robot name="paintsystem" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <material name="red">
+        <color rgba="1 0 0 0.8"/>
+    </material>
+
+    <link name="base_footprint"/>
+
+    <link name="frame_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://paintsystem_description/meshes/frame_link.STL" scale="1 1 1"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="frame_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+</robot>
